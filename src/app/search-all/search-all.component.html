@@ -1,0 +1,114 @@
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+    <a
+      class="nav-link ml-auto"
+      style="padding-top: 0px;float:right;padding-right: 23px;"
+      routerLink="/land"
+      routerLinkActive="active"
+      ><b>Back</b></a
+    >
+
+</nav>
+  <div
+    class="container-fluid bg-muted"
+    style="padding-top: 10px; padding-bottom: 10px"
+  ></div>
+
+  <div
+    id="searchBug"
+    class="container tab-pane active"
+    style="padding-bottom: 30px"
+  >
+    <!-- input fields -->
+    <!-- <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="uname" class="mb-2 mr-sm-2"><b>First Name : </b></label>
+          <br />
+          <input
+            type="text"
+            [(ngModel)]="account.firstName"
+            class="form-control mb-2 mr-sm-2"
+            id="name"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="uname" class="mb-2 mr-sm-2"><b>Last Name : </b></label>
+          <br />
+          <input
+            type="text"
+            [(ngModel)]="account.lastName"
+            class="form-control mb-2 mr-sm-2"
+            id="number"
+          />
+        </div>
+      </div> -->
+
+      <div class="form-group form-inline">
+        <label for="uname" class="mb-2 mr-sm-2"><b>Account number : </b></label>
+        <br />
+        <input
+        style="margin-top: 5px;"
+          type="text"
+          [(ngModel)]="account.number"
+          class="form-control mb-2 mr-sm-2"
+          id="number"
+        />
+        <button
+          class="btn btn-primary btn-block searchBtn"
+          style="width: 45%;margin-left: 50px;"
+          (click)="searchByAccountNumber(account.number)"
+        >
+          Search by Account Number
+        </button>
+        <div class="text-center">
+          <button class="btn btn-primary btn-block searchBtn" style="width:80px ; margin-left: 100px;" (click)="ngOnInit()">
+            Refresh
+          </button>
+        </div>
+      </div>
+
+
+
+    <!-- table -->
+
+    <div class="table-responsive">
+      <table
+        class="table table-bordered table-stripped"
+        style="border: 2px solid #000000; margin-top: 50px"
+      >
+        <thead class="thead-dark">
+          <td>Account Number</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Created Date</td>
+          <td>Type</td>
+          <td>Status</td>
+          <td>Mobile Number</td>
+          <td>Email Id</td>
+
+
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let account of accountArray; index as i">
+            <td>{{ account.number }}</td>
+            <td>{{ account.firstName }}</td>
+            <td>{{ account.lastName }}</td>
+            <td>{{ account.createDate | date }}</td>
+            <td>{{ account.type }}</td>
+            <td>{{ account.status }}</td>
+            <td>{{ account.mobileNumber }}</td>
+            <td>{{ account.email }}</td>
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>

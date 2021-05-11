@@ -1,0 +1,180 @@
+<nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+  <a
+    class="nav-link ml-auto"
+    style="padding-top: 0px;float:right;padding-right: 23px;"
+    routerLink="/customer"
+    routerLinkActive="active"
+    ><b>Back</b></a
+  >
+
+</nav>
+<form class="createAccount" id='createAccount'>
+  <h5 style="margin-top: 30px;font-weight: bold;font-size:x-large;color: #0450a0">Deposit</h5>
+  <br>
+  <div class="row fieldRow "style="color:#0450a0">
+
+    <div class="col-sm-12">
+      <label for="lname">AccountNumber<span>*</span></label>
+      <input
+        [(ngModel)]="account.number"
+        class="form-control"
+        id="number"
+        name="number"
+      />
+      <br />
+
+      <button
+        class="btn btn-primary"
+        (click)="searchAccountByNumber(account.number)"
+        style="width: 100%"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+  <div class="row fieldRow" style="color: #0450a0">
+    <div class="col-sm-6">
+      <label>First Name<span>*</span></label>
+      <input
+        [(ngModel)]="account.firstName"
+        maxlength="100"
+        type="text"
+        class="form-control"
+        id="fname"
+        name="name"
+        disabled
+        required
+      />
+    </div>
+
+    <div class="col-sm-6">
+      <label>Last Name<span>*</span></label>
+      <input
+        [(ngModel)]="account.lastName"
+        class="form-control"
+        id="lname"
+        name="lname"
+        disabled
+      />
+    </div>
+
+    <div class="col-sm-12" style="margin-top: 10px">
+      <label>Amount to deposit<span>*</span></label>
+      <input
+        [(ngModel)]="account.depositAmount"
+        class="form-control"
+        id="dAmount"
+        name="amount"
+      />
+
+      <button
+        (click)="deposit()"
+        class="btn btn-primary btn-block"
+        style="width: 100%; margin-top: 20px"
+      >
+        Deposit
+      </button>
+
+      <!-- -----------------Disabled------------------------------ -->
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <input
+        [(ngModel)]="account.address.houseNumber"
+        maxlength="100"
+        type="hidden"
+        class="form-control"
+        id="house"
+        placeholder="Address"
+        name="housename"
+        id="housename"
+        required
+      />
+    </div>
+
+    <div class="col-sm-6">
+      <input
+        [(ngModel)]="account.address.city"
+        class="form-control"
+        type="hidden"
+        placeholder="City"
+        name="City"
+        id="city"
+      />
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <input
+        [(ngModel)]="account.address.state"
+        maxlength="100"
+        type="hidden"
+        class="form-control"
+        placeholder="State"
+        name="state"
+        id="state"
+        required
+      />
+    </div>
+
+    <div class="col-sm-6">
+      <input
+        [(ngModel)]="account.address.pinCode"
+        type="hidden"
+        class="form-control"
+        placeholder="Pincode"
+        id="pincode"
+        name="pincode"
+      />
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <select
+        style="display: none"
+        [(ngModel)]="account.status"
+        class="form-control"
+        id="status"
+        name="status"
+        disabled
+      >
+        <option value="ACTIVE">ACTIVE</option>
+        <option value="INACTIVE">INACTIIVE</option>
+        <option value="CLOSED">CLOSED</option>
+      </select>
+    </div>
+
+    <div class="col-sm-6">
+      <select
+        style="display: none"
+        [(ngModel)]="account.type"
+        name="type"
+        type="hidden"
+        class="form-control"
+        id="type"
+        disabled
+      >
+        <option value="SAVINGS">SAVINGS</option>
+        <option value="CURRENT">CURRENT</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <input
+        [(ngModel)]="account.balance"
+        maxlength="100"
+        type="hidden"
+        class="form-control"
+        placeholder="Balance"
+        id="balance"
+        name="balance"
+        disabled
+        required
+      />
+    </div>
+  </div>
+</form>

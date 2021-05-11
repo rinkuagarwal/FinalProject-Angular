@@ -1,0 +1,96 @@
+<nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+  <a class="nav-link ml-auto" style="padding-top: 0px;float:right;padding-right: 23px;" routerLink="/customer"
+    routerLinkActive="active"><b>Back</b></a>
+
+</nav>
+<form class="createAccount" id="createAccount" style="margin-top: 30px">
+  <h5 style="font-weight: bold; font-size: x-large; color: #0450a0">
+    Withdraw
+  </h5>
+  <br />
+  <div class="row fieldRow" style="color: #0450a0">
+    <div class="col-sm-12" style="color: #0450a0">
+      <label for="lname">AccountNumber<span>*</span></label>
+      <input [(ngModel)]="account.number" class="form-control" id="number" placeholder="Account Number" name="number" />
+      <br />
+
+      <button class="btn btn-primary" (click)="searchAccountByNumber(account.number)" style="width:100%">
+        Search
+      </button>
+    </div>
+  </div>
+  <div class="row fieldRow" style="color: #0450a0">
+    <div class="col-sm-6">
+      <label>First Name</label>
+      <input [(ngModel)]="account.firstName" maxlength="100" type="text" class="form-control" id="fname" name="name"
+        disabled required />
+    </div>
+
+    <div class="col-sm-6" style="color: #0450a0">
+      <label>Last Name</label>
+      <input [(ngModel)]="account.lastName" class="form-control" id="lname"  name="lname"
+        disabled />
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6" style="color: #0450a0">
+      <label>Balance</label>
+      <input [(ngModel)]="account.balance" type="text" class="form-control"  id="balance"
+        name="balance" disabled required />
+    </div>
+    <div class="col-sm-6" style="color: #0450a0">
+      <label>Amount to be withdrawn : </label>
+      <input [(ngModel)]="account.withdrawAmount" type="text" class="form-control" id="withdrawamount"
+        name="withdrawamount" required />
+    </div>
+  </div>
+  <button (click)="update()" class="btn btn-primary btn-block" style="width=100%"> Withdraw
+  </button>
+</form>
+
+
+<div class="row fieldRow">
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label >Address H/No.<span>*</span></label> -->
+    <input [(ngModel)]="account.address.houseNumber" maxlength="100" type="hidden" class="form-control" id="house"
+      placeholder="Address" name="housename" id="housename" required />
+  </div>
+
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label >City</label> -->
+    <input [(ngModel)]="account.address.city" class="form-control"  name="City" id="city"
+      type="hidden" />
+  </div>
+</div>
+<div class="row fieldRow">
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label >State</label> -->
+    <input [(ngModel)]="account.address.state" maxlength="100" type="hidden" class="form-control"
+      name="state" id="state" required />
+  </div>
+
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label >Pin Code <span>*</span> </label> -->
+    <input [(ngModel)]="account.address.pinCode" type="hidden" class="form-control"  id="pincode"
+      name="pincode" />
+  </div>
+</div>
+<div class="row fieldRow">
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label>Status</label> -->
+    <select style="display: none" [(ngModel)]="account.status" class="form-control" id="status" name="status" disabled>
+      <option value="ACTIVE">ACTIVE</option>
+      <option value="INACTIVE">INACTIIVE</option>
+      <option value="CLOSED">CLOSED</option>
+    </select>
+  </div>
+
+  <div class="col-sm-6" style="color: #0450a0">
+    <!-- <label>Type</label> -->
+    <select style="display: none" [(ngModel)]="account.type" name="type" class="form-control" id="type" disabled>
+      <option value="SAVINGS">SAVINGS</option>
+      <option value="CURRENT">CURRENT</option>
+    </select>
+  </div>
+</div>

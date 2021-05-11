@@ -1,0 +1,136 @@
+#hero {
+  width: 100%;
+  position: relative;background-color: #0450a0;
+  /* background: url("C:\Users\Downloads\FinalProject-Angular\src\assets\img\hero-bg.png") center bottom no-repeat; */
+  background-size: cover;
+  padding: 100px 0 120px 0;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    padding: 140px 0 60px 0;
+  }
+}
+
+@media (max-width: 574px) {
+  #hero {
+    padding: 100px 0 20px 0;
+  }
+}
+
+#hero .hero-img {
+  width: 50%;
+  float: right;
+}
+
+@media (max-width: 991px) {
+  #hero .hero-img {
+    width: 80%;
+    float: none;
+    margin: 0 auto 25px auto;
+  }
+}
+
+#hero .hero-info {
+  width: 50%;
+  float: left;
+}
+
+@media (max-width: 991px) {
+  #hero .hero-info {
+    width: 80%;
+    float: none;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  #hero .hero-info {
+    width: 100%;
+  }
+}
+
+#hero .hero-info h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#hero .hero-info h2 span {
+  color: #74b5fc;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  #hero .hero-info h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+}
+
+#hero .hero-info .btn-get-started, #hero .hero-info .dropbtn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  color: #fff;
+}
+
+#hero .hero-info .btn-get-started {
+  background: #007bff;
+  border: 2px solid #007bff;
+  color: #fff;
+}
+
+#hero .hero-info .btn-get-started:hover {
+  background: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+#hero .hero-info .dropbtn {
+  background-color: #007bff;
+  border: 2px solid#007bff;
+  color: #fff;
+}
+
+#hero .hero-info .dropbtn:hover {
+  background: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+

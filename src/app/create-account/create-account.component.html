@@ -1,0 +1,112 @@
+<nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+  <a class="nav-link ml-auto" style="padding-top: 0px;float:right;padding-right: 23px;" routerLink="/"
+    routerLinkActive="active"><b>Back</b></a>
+
+</nav>
+
+<form class="createAccount" id='createAccount'>
+  <h5 style="font-weight: bold;font-size:x-large;">Create Account</h5>
+  <br>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>First Name<span>*</span></label>
+      <input [(ngModel)]='account.firstName' class="form-control" id='fname' name="fname" required>
+
+    </div>
+
+    <div class="col-sm-6">
+      <label>Last Name<span>*</span></label>
+      <input [(ngModel)]='account.lastName' class="form-control" id='lname' name="lname" required>
+
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>Mobile Number<span>*</span></label>
+      <input [(ngModel)]='account.mobileNumber' pattern="[0-9]{10}" type="tel"
+        class="form-control" id='mobile' name="mobile" maxlength="10" minlength="10" required>
+
+
+      <!-- <div *ngIf=' account.mobileNumber.length!=10' class="alert alert-danger"> Invalid Mobile Number(should be 10
+        digit)
+        <div [hidden]="!mobileref.errors?.pattern">
+          Invalid Mobile Number!
+        </div>
+      </div> -->
+
+    </div>
+    <div class="col-sm-6">
+      <label>Email Id</label>
+      <input [(ngModel)]='account.email' type="email"
+        pattern="[A-Za-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" type="text" class="form-control"
+        id='email' name="email" #emailref="ngModel" required>
+      <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="alert alert-danger">
+        <div [hidden]="!emailref.errors?.pattern">
+          Invalid Email address
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>Address H/No.<span>*</span></label>
+      <input [(ngModel)]='account.address.houseNumber' maxlength=100 type="text" class="form-control" id='house'
+        name="name" required>
+    </div>
+
+    <div class="col-sm-6">
+
+      <label>City<span>*</span></label>
+      <input [(ngModel)]='account.address.city' class="form-control" name="City">
+
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>State<span>*</span></label>
+      <input [(ngModel)]='account.address.state' class="form-control" id='sname' name="sname" required>
+
+    </div>
+
+    <div class="col-sm-6">
+      <label>Pin Code <span>*</span> </label>
+      <input [(ngModel)]='account.address.pinCode' class="form-control" maxlength="6" minlength="6" name="lname">
+
+    </div>
+  </div>
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>Status<span>*</span></label>
+      <select [(ngModel)]='account.status' class="form-control" id='status' name="status">
+        <option value="ACTIVE">ACTIVE</option>
+        <option value="INACTIVE" disabled>INACTIVE</option>
+        <option value="CLOSED" disabled>CLOSED</option>
+      </select>
+    </div>
+
+
+    <div class="col-sm-6">
+      <label>Type<span>*</span></label>
+      <select [(ngModel)]='account.type' name="type" class="form-control" id='type'>
+        <option value="SAVINGS">SAVINGS</option>
+        <option value="CURRENT">CURRENT</option>
+
+      </select>
+    </div>
+
+  </div>
+
+  <div class="row fieldRow">
+    <div class="col-sm-6">
+      <label>Balance<span>*</span></label>
+      <input [(ngModel)]='account.balance' class="form-control" id='balancer' name="balance" minlength="12"
+        maxlength="17">
+
+    </div>
+
+  </div>
+
+  <button (click)='save()' class="btn btn-primary btn-block" style="margin-bottom: 50px;width:100%">Save</button>
+</form>

@@ -1,0 +1,25 @@
+<nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+  <a
+    class="nav-link ml-auto"
+    style="padding-top: 0px;float:right;padding-right: 23px;"
+    routerLink="/"
+    routerLinkActive="active"
+    ><b>Back</b></a
+  >
+
+</nav>
+<form class="form-signin">
+  <h2 class="form-signin-heading" style="text-align: center;">Please sign in</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+     <input name="email" [(ngModel)] = "user.username" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+
+     <label for="inputPassword" class="sr-only">Password</label>
+     <input name="password" [(ngModel)] = "user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+     <div class="checkbox">
+       <label>
+         <input type="checkbox" value="remember-me"> Remember me
+       </label>
+     </div>
+ <button routerLink="/land" routerLinkActive="active"class="btn btn-lg btn-primary btn-block" style="margin-bottom: 20px"(click)="validateLogin();" type="button">Sign in</button>
+</form>

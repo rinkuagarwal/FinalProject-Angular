@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="search-account.component.css">
+
+</head>
+<body>
+  <nav style="background-color: rgb(230, 227, 227);height: 25px;">
+
+    <a
+      class="nav-link ml-auto"
+      style="padding-top: 0px;float:right;padding-right: 23px;"
+      routerLink="/customer"
+      routerLinkActive="active"
+      ><b>Back</b></a
+    >
+
+</nav>
+  <div style="margin:50px">
+  <h5>Find Account Details</h5>
+  <div class="row formContainer">
+    <form id='accountsearchform'>
+      <div  style="margin:20px">
+       <label>Account Number</label>
+       <input [(ngModel)]='account.number' class="form-control" id='number'  name="number">
+      </div>
+
+    </form>
+
+      <button (click)=' getAccountbyNumber(account.number)' class="btn btn-primary btn-block searchBtn">Search</button>
+
+  </div>
+
+            <div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>H/No.</th>
+
+      <th>City</th>
+
+      <th>Status</th>
+      <th>Type</th>
+      <th>Balance</th>
+      <th>Mobile Number</th>
+      <th>Email Id</th>
+
+
+
+    </tr>
+    <tr *ngFor='let acc of accountArray'>
+      <td>{{acc.firstName}}</td>
+      <td>{{acc.lastName}}</td>
+      <td>{{acc.address.houseNumber}}</td>
+
+      <td>{{acc.address.city}}</td>
+
+      <td>{{acc.status}}</td>
+      <td>{{acc.type}}</td>
+      <td>{{acc.balance}}</td>
+      <td>{{ acc.mobileNumber }}</td>
+        <td>{{ acc.email }}</td>
+
+    </tr>
+  </table>
+  </div>
+   </div>
